@@ -1,4 +1,4 @@
-package y2023
+package y2024
 
 import readInput
 import kotlin.test.BeforeTest
@@ -10,16 +10,16 @@ class Day01Test {
 
     @BeforeTest
     fun setup() {
-        testInput = readInput(2023, "Day01_test")
+        testInput = readInput(2024, "Day01_test")
     }
 
     @Test
     fun testPart1() {
-        assertEquals(0, Day01.part1(testInput))
+        assertEquals(11, Day01.part1(testInput))
     }
 
     @Test
     fun testPart2() {
-        assertEquals(0, Day01.part2(testInput))
+        assertEquals(31, Day01.part2(testInput))
     }
 }
