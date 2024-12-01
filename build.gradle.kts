@@ -29,6 +29,10 @@ jmh {
     fork = 1
 }
 
+tasks.jmhJar {
+    notCompatibleWithConfigurationCache("")
+}
+
 kotlin {
     jvmToolchain(21)
 }
