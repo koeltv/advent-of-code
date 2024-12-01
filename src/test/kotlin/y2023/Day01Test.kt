@@ -1,14 +1,14 @@
 package y2023
 
-import org.junit.jupiter.api.BeforeEach
 import readInput
+import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
 class Day01Test {
     private lateinit var testInput: List<String>
 
-    @BeforeEach
+    @BeforeTest
     fun setup() {
         testInput = readInput(2023, "Day01_test")
     }

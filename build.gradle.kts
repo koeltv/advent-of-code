@@ -1,10 +1,8 @@
 import java.time.LocalDate
 
-val coroutineVersion: String by project
-
 plugins {
-    kotlin("jvm") version "1.9.21"
-    id("me.champeau.jmh") version "0.7.2"
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.jmh)
 }
 
 group = "com.koeltv"
@@ -15,8 +13,8 @@ repositories {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineVersion")
-    testImplementation("org.jetbrains.kotlin:kotlin-test")
+    implementation(libs.kotlin.coroutine)
+    testImplementation(libs.kotlin.test.junit)
 }
 
 jmh {
@@ -29,10 +27,6 @@ jmh {
     warmupIterations = 1
     iterations = 5
     fork = 1
-}
-
-tasks.test {
-    useJUnitPlatform()
 }
 
 kotlin {
