@@ -1,14 +1,17 @@
 # See https://developer.android.com/build/migrate-to-catalogs
 
-[versions]
-kotlin = "1.9.21"
-jmh = "0.7.2"
-coroutine = "1.7.3"
-
-[libraries]
-kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
-kotlin-coroutine = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutine" }
-
 [plugins]
+
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 jmh = { id = "me.champeau.jmh", version.ref = "jmh" }
+
+[versions]
+
+kotlin = "2.1.0"
+jmh = "0.7.2"
+coroutine = "1.9.0"
+
+[libraries]
+
+kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
+kotlin-coroutine = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutine" }
