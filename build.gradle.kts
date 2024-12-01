@@ -82,7 +82,7 @@ tasks.register("newDay") {
 
     val currentYear = yearDirectory.name.drop(1)
 
-    val templateMap = selectedTemplatePaths.associate { (template, pathTemplate) ->
+    val templateMap = selectedTemplatePaths.map { (template, pathTemplate) ->
         val templateFile = layout.projectDirectory.file("templates/$template.txt").asFile
         val newFileName = pathTemplate.replace("\$year", currentYear).replace("\$dayNumber", currentDay)
 
