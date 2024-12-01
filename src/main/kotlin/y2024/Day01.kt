@@ -1,6 +1,7 @@
 package y2024
 
 import readInput
+import utils.compare
 import kotlin.math.abs
 
 object Day01 {
@@ -31,8 +32,8 @@ object Day01 {
 fun main() {
     // test if implementation meets criteria from the description, like:
     val testInput = readInput(2024, "Day01_test")
-    check(Day01.part1(testInput) == 11)
-    check(Day01.part2(testInput) == 31)
+    compare(Day01.part1(testInput), 11)
+    compare(Day01.part2(testInput), 31)
 
     // apply on real input
     val input = readInput(2024, "Day01")
