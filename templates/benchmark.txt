@@ -1,0 +1,21 @@
+package y$year
+
+import org.openjdk.jmh.annotations.Benchmark
+import org.openjdk.jmh.annotations.Scope
+import org.openjdk.jmh.annotations.State
+import readInput
+
+@State(Scope.Benchmark)
+open class Day$dayNumberBenchmark {
+    private val input = readInput($year, "Day$dayNumber")
+
+    @Benchmark
+    fun benchmarkPart1() {
+        Day$dayNumber.part1(input)
+    }
+
+    @Benchmark
+    fun benchmarkPart2() {
+        Day$dayNumber.part2(input)
+    }
+}

@@ -1,0 +1,25 @@
+package y$year
+
+import readInput
+
+object Day$dayNumber {
+    fun part1(input: List<String>): Int {
+        return 0
+    }
+
+    fun part2(input: List<String>): Int {
+        return 0
+    }
+}
+
+fun main() {
+    // test if implementation meets criteria from the description, like:
+    val testInput = readInput($year, "Day$dayNumber_test")
+    check(Day$dayNumber.part1(testInput) == 0)
+    check(Day$dayNumber.part2(testInput) == 0)
+
+    // apply on real input
+    val input = readInput($year, "Day$dayNumber")
+    println("Part 1: ${Day$dayNumber.part1(input)}")
+    println("Part 2: ${Day$dayNumber.part2(input)}")
+}
