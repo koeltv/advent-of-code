@@ -2,6 +2,7 @@ package y2024
 
 import readInput
 import utils.compare
+import utils.withoutElementAt
 import kotlin.math.abs
 
 object Day02 {
@@ -54,5 +55,3 @@ fun main() {
     println("Part 1: ${Day02.part1(input)}")
     println("Part 2: ${Day02.part2(input)}")
 }
-
-fun <T> List<T>.withoutElementAt(index: Int) = this.filterIndexed { i, _ -> i != index }
