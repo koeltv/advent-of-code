@@ -1,25 +1,54 @@
 package y2023
 
 import readInput
+import utils.println
 
-object Day01 {
+private val stringDigits = mapOf(
+    "one" to 1,
+    "two" to 2,
+    "three" to 3,
+    "four" to 4,
+    "five" to 5,
+    "six" to 6,
+    "seven" to 7,
+    "eight" to 8,
+    "nine" to 9,
+)
+
+fun main() {
     fun part1(input: List<String>): Int {
-        return 0
+        return input
+            .map { line -> line.mapNotNull { it.digitToIntOrNull() } }
+            .sumOf { it.first() * 10 + it.last() }
     }
 
     fun part2(input: List<String>): Int {
-        return 0
-    }
-}
+        return input.map { line ->
+            var buffer = ""
+            line.mapNotNull { char ->
+                buffer += char
 
-fun main() {
+                char.digitToIntOrNull() ?: stringDigits.entries
+                    .firstOrNull { (string, _) ->
+                        val digitIndex = buffer.indexOf(string)
+                        if (digitIndex != -1) {
+                            buffer = buffer.substring(digitIndex + 1)
+                            true
+                        } else false
+                    }?.value
+            }
+        }.sumOf { it.first() * 10 + it.last() }
+    }
+
     // test if implementation meets criteria from the description, like:
-    val testInput = readInput(2023, "Day01_test")
-    check(Day01.part1(testInput) == 0)
-    check(Day01.part2(testInput) == 0)
+    val testInput1 = readInput(2023, "Day01_test1")
+    check(part1(testInput1) == 142)
+
+    val testInput2 = readInput(2023, "Day01_test2")
+    check(part2(testInput2) == 281)
 
     // apply on real input
     val input = readInput(2023, "Day01")
-    println("Part 1: ${Day01.part1(input)}")
-    println("Part 2: ${Day01.part2(input)}")
+    part1(input).println()
+    part2(input).println()
 }
