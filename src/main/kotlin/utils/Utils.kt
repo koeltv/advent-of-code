@@ -170,9 +170,9 @@ operator fun <E> MutableList<MutableList<E>>.set(coordinates: Coordinates, value
 
 enum class Direction {
     NORTH,
+    EAST,
     SOUTH,
-    WEST,
-    EAST;
+    WEST;
 
     fun opposite(): Direction {
         return when (this) {
@@ -184,6 +184,10 @@ enum class Direction {
     }
 
     fun isHorizontal(): Boolean = this == WEST || this == EAST
+
+    fun rotateRight(): Direction {
+        return Direction.entries[(this.ordinal + 1) % Direction.entries.size]
+    }
 }
 
 fun <T> List<T>.withoutElementAt(index: Int) = this.filterIndexed { i, _ -> i != index }
