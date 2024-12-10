@@ -79,7 +79,7 @@ tasks.register("newDay") {
     group = "Advent of Code"
 
     val yearDirectory = getCurrentYearDirectory()
-    val currentDay = getNextDay(yearDirectory)
+    val currentDay = if (dayProperty.isPresent) getCurrentDay(yearDirectory) else getNextDay(yearDirectory)
 
     val properties = providers.gradlePropertiesPrefixedBy("").get()
     val selectedTemplatePaths = templatePaths + optionalTemplatePaths.filter { (template, _) -> template in properties }
