@@ -1,7 +1,7 @@
 package y2023
 
 import readInput
-import utils.println
+import utils.printline
 import kotlin.math.max
 
 data class Card(val symbol: Char, val lowJokers: Boolean = false) : Comparable<Card> {
@@ -111,6 +111,6 @@ fun main() {
 
     // apply on real input
     val input = readInput(2023, "Day07")
-    part1(input).println()
-    part2(input).println()
+    part1(input).printline()
+    part2(input).printline()
 }

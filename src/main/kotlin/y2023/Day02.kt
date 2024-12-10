@@ -2,7 +2,7 @@ package y2023
 
 import readInput
 import utils.merge
-import utils.println
+import utils.printline
 import kotlin.math.max
 
 fun main() {
@@ -51,6 +51,6 @@ fun main() {
 
     // apply on real input
     val input = readInput(2023, "Day02")
-    part1(input, givenCubes).println()
-    part2(input).println()
+    part1(input, givenCubes).printline()
+    part2(input).printline()
 }

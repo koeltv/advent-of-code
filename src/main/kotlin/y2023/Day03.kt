@@ -2,7 +2,7 @@ package y2023
 
 import readInput
 import utils.Coordinates
-import utils.println
+import utils.printline
 
 abstract class DataPoint(open val coordinates: Coordinates) {
     abstract fun near(coordinates: Coordinates): Boolean
@@ -86,6 +86,6 @@ fun main() {
 
     // apply on real input
     val input = readInput(2023, "Day03")
-    part1(input).println()
-    part2(input).println()
+    part1(input).printline()
+    part2(input).printline()
 }

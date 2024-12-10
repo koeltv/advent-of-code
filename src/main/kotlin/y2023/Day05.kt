@@ -1,7 +1,7 @@
 package y2023
 
 import readInput
-import utils.println
+import utils.printline
 import utils.splitOn
 import utils.toStream
 import kotlin.streams.asStream
@@ -96,6 +96,6 @@ fun main() {
 
     // apply on real input
     val input = readInput(2023, "Day05")
-    part1(input).println()
-    part2(input).println()
+    part1(input).printline()
+    part2(input).printline()
 }

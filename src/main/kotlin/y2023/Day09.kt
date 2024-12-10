@@ -1,7 +1,7 @@
 package y2023
 
 import readInput
-import utils.println
+import utils.printline
 
 data class Variation(val values: List<Int>) {
     val stages = generateSequence(values) { it.zipWithNext { a, b -> b - a } }
@@ -48,6 +48,6 @@ fun main() {
 
     // apply on real input
     val input = readInput(2023, "Day09")
-    part1(input).println()
-    part2(input).println()
+    part1(input).printline()
+    part2(input).printline()
 }
