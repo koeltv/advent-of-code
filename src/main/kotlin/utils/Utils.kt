@@ -191,3 +191,5 @@ enum class Direction {
 }
 
 fun <T> List<T>.withoutElementAt(index: Int) = this.filterIndexed { i, _ -> i != index }
+
+fun IntRange.size(): Int = (last - first + 1) / step
