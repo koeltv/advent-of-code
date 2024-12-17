@@ -193,3 +193,10 @@ enum class Direction {
 fun <T> List<T>.withoutElementAt(index: Int) = this.filterIndexed { i, _ -> i != index }
 
 fun IntRange.size(): Int = (last - first + 1) / step
+
+fun String.splitOnNthChar(i: Int): Pair<String, String> = this.substring(0..(i - 1)) to this.substring(i, this.length)
+
+inline fun <T, A: T, B: T> Pair<A, B>.forBoth(block: (T) -> Unit): Unit {
+    block(this.first)
+    block(this.second)
+}
