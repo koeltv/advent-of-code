@@ -157,7 +157,7 @@ fun getYear(): String {
 }
 
 fun getDay(): String = dayProperty.get()
-    .let { Regex("([1-9]|(1[0-9])|(2[0-5]))").find(it)?.destructured?.component1() }
+    .let { Regex("(1[0-9]|2[0-5]|[1-9])").find(it)?.destructured?.component1() }
     ?.padStart(2, '0')
     ?: error("Day should be between 1 and 25, ex: -Pday=1")
 
