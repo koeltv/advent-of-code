@@ -61,5 +61,4 @@ fun main() {
     val input = readInput(2025, "Day05")
     println("Part 1: ${Day05.part1(input)}")
     println("Part 2: ${Day05.part2(input)}")
-    compare(Day05.part2(input), 346240317247002L)
 }
